@@ -1,0 +1,3 @@
+* text=auto export-subst
+*.conf text eol=lf
+*.yaml text eol=lf

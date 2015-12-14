@@ -1,0 +1,42 @@
+Name: jolla-keyboard-uk
+Summary: Ukrainian keyboard layout for Sailfish OS
+Version: 0.1.0
+Release: 1
+# The contents of the Group field should be one of the groups listed here:
+# http://gitorious.org/meego-developer-tools/spectacle/blobs/master/data/GROUPS
+Group: Qt/Qt
+URL: https://github.com/leppa/jolla-keyboard-uk
+License: BSD
+# This must be generated before uploading a package to a remote build service.
+# Usually this line does not need to be modified.
+Sources:
+- '%{name}-%{version}.tar.bz2'
+Description: |
+  Ukrainian layout for the Sailfish OS virtual keyboard
+Configure: none
+# The qtc5 builder inserts macros to allow QtCreator to have fine
+# control over qmake/make execution
+Builder: qtc5
+BuildArch: noarch
+
+# This section specifies build dependencies that are resolved using pkgconfig.
+# This is the preferred way of specifying build dependencies for your package.
+#PkgConfigBR:
+#  - package-name
+
+# Build dependencies without a pkgconfig setup can be listed here
+# PkgBR:
+#   - package-needed-to-build
+
+# Runtime dependencies which are not automatically detected
+#Requires:
+#  - package-name
+
+# All installed files
+Files:
+  - '%attr(644,-,-) %{_datadir}/maliit/plugins/com/jolla/layouts/uk.conf'
+  - '%attr(644,-,-) %{_datadir}/maliit/plugins/com/jolla/layouts/uk.qml'
+
+# For more information about yaml and what's supported in Sailfish OS
+# build system, please see https://wiki.merproject.org/wiki/Spectacle
+
