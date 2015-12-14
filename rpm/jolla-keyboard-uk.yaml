@@ -29,8 +29,8 @@ BuildArch: noarch
 #   - package-needed-to-build
 
 # Runtime dependencies which are not automatically detected
-#Requires:
-#  - package-name
+Requires:
+  - jolla-keyboard
 
 # All installed files
 Files:

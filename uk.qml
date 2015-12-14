@@ -28,6 +28,7 @@
 
 import QtQuick 2.0
 import ".."
+import com.jolla.keyboard 1.0
 
 KeyboardLayout {
     KeyboardRow {
@@ -61,58 +62,46 @@ KeyboardLayout {
 
     KeyboardRow {
         ShiftKey {
-            width: shiftKeyWidthNarrow
+            implicitWidth: shiftKeyWidthNarrow
         }
 
         CharacterKey { caption: "я"; captionShifted: "Я"; symView: "@"; symView2: "«" }
         CharacterKey { caption: "ч"; captionShifted: "Ч"; symView: "&"; symView2: "»" }
         CharacterKey { caption: "с"; captionShifted: "С"; symView: "/"; symView2: "÷" }
         CharacterKey { caption: "м"; captionShifted: "М"; symView: "\\"; symView2: "“" }
-        CharacterKey { caption: "и"; captionShifted: "И"; symView: "'"; symView2: "”" }
+        CharacterKey { caption: "и"; captionShifted: "И"; symView: "-"; symView2: "”" }
         CharacterKey { caption: "т"; captionShifted: "Т"; symView: ";"; symView2: "„" }
         CharacterKey { caption: "ь"; captionShifted: "Ь"; symView: ":"; symView2: "©" }
         CharacterKey { caption: "б"; captionShifted: "Б"; symView: "^"; symView2: "®" }
         CharacterKey { caption: "ю"; captionShifted: "Ю"; symView: "|"; symView2: "§" }
 
         BackspaceKey {
-            width: shiftKeyWidthNarrow
+            implicitWidth: shiftKeyWidthNarrow
         }
     }
 
     KeyboardRow {
         SymbolKey {
-            width: symbolKeyWidthNarrow
+            symbolCaption: "АБВ"
+            implicitWidth: symbolKeyWidthNarrow
         }
 
         CharacterKey {
-            caption: "-"
-            captionShifted: "-"
-            width: punctuationKeyWidthNarrow
+            caption: "'"
+            captionShifted: "'"
+            implicitWidth: punctuationKeyWidthNarrow
             fixedWidth: true
         }
-        CharacterKey {
-            caption: ","
-            captionShifted: ","
-            width: punctuationKeyWidthNarrow
-            fixedWidth: true
-            separator: false
+        ContextAwareCommaKey {
+            implicitWidth: punctuationKeyWidthNarrow
         }
-        SpacebarKey {
-            fixedWidth: true
-        }
+        SpacebarKey {}
         CharacterKey {
             caption: "."
             captionShifted: "."
-            width: punctuationKeyWidthNarrow
+            implicitWidth: punctuationKeyWidthNarrow
             fixedWidth: true
-            separator: false
-        }
-        CharacterKey {
-            caption: "'"
-            captionShifted: "'"
-            width: punctuationKeyWidthNarrow
-            fixedWidth: true
-            separator: false
+            separator: SeparatorState.HiddenSeparator
         }
         EnterKey {}
     }
