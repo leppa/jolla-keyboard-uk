@@ -5,5 +5,10 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Mon Dec 14 2015 Oleksii Serdiuk <contacts@oleksii.name> 0.2.0-1
+- Compatibility with the latest version of Sailfish OS
+- Split mode support
+- Slight changes to the layout
+
 * Sat Jul 19 2014 Oleksii Serdiuk <contacts@oleksii.name> 0.1.0-1
 - Initial release
