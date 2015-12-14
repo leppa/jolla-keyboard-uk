@@ -31,6 +31,8 @@ import ".."
 import com.jolla.keyboard 1.0
 
 KeyboardLayout {
+    splitSupported: true
+
     KeyboardRow {
         CharacterKey { caption: "й"; captionShifted: "Й"; symView: "1"; symView2: "€" }
         CharacterKey { caption: "ц"; captionShifted: "Ц"; symView: "2"; symView2: "£" }
@@ -61,6 +63,8 @@ KeyboardLayout {
     }
 
     KeyboardRow {
+        splitIndex: 6
+
         ShiftKey {
             implicitWidth: shiftKeyWidthNarrow
         }
@@ -81,6 +85,8 @@ KeyboardLayout {
     }
 
     KeyboardRow {
+        splitIndex: 4
+
         SymbolKey {
             symbolCaption: "АБВ"
             implicitWidth: symbolKeyWidthNarrow
@@ -90,17 +96,21 @@ KeyboardLayout {
             caption: "'"
             captionShifted: "'"
             implicitWidth: punctuationKeyWidthNarrow
-            fixedWidth: true
+            fixedWidth: !splitActive
         }
         ContextAwareCommaKey {
             implicitWidth: punctuationKeyWidthNarrow
         }
         SpacebarKey {}
+        SpacebarKey {
+            languageLabel: ""
+            active: splitActive
+        }
         CharacterKey {
             caption: "."
             captionShifted: "."
             implicitWidth: punctuationKeyWidthNarrow
-            fixedWidth: true
+            fixedWidth: !splitActive
             separator: SeparatorState.HiddenSeparator
         }
         EnterKey {}
